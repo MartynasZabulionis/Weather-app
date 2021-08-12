@@ -2,4 +2,6 @@
     <string name="app_name">Weather</string>
     <string name="enter_city_name"><font size="14">ENTER CITY NAME</font></string>
     <string name="noItems">No weather history</string>
+    <string name="enterCityName">Please enter city name</string>
+    <string name="errorOccurred">An error occurred</string>
 </resources>

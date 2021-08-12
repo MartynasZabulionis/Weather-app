@@ -12,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import lt.marcius.weather.MyApplication
+import lt.marcius.weather.R
 import lt.marcius.weather.WeatherInfo
 import org.json.JSONArray
 import org.json.JSONObject
@@ -62,8 +63,9 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
                 }
             },
             {
+
                 if (it.message != null)
-                    _fetchingError.value = "An error occurred"
+                    _fetchingError.value = getApplication<MyApplication>().resources.getString(R.string.errorOccurred)
                 else {
                     val jsonObject = JSONObject(String(it.networkResponse.data))
                     _fetchingError.value = jsonObject.getString("message")

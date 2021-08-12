@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
+import lt.marcius.weather.R
 import lt.marcius.weather.WeatherInfo
 import lt.marcius.weather.WeatherInfoActivity
 import lt.marcius.weather.databinding.ActivityMainBinding
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.enterButton.setOnClickListener {
             if (binding.editText.text.isEmpty()) {
-                showSnackbar("Please enter city name")
+                showSnackbar(resources.getString(R.string.enterCityName))
                 return@setOnClickListener
             }
             setCircularProgressVisibility(true)
