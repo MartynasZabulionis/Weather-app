@@ -21,13 +21,6 @@ data class WeatherInfo (
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     val iconData: ByteArray,
 ) : Parcelable {
-//    constructor(response: JSONObject, iconData: ByteArray) : this(
-//            cityName = response["name"] as String,
-//            temp = ((response["main"] as JSONObject)["temp"] as Double).roundToInt(),
-//            description = (weatherData["description"] as String).capitalize(Locale.ROOT),
-//            unixTime = response["dt"] as Int,
-//            iconData = bytes//byteBuffer.array()
-//    )
     companion object {
         fun fromResponse(response: JSONObject, iconData: ByteArray): WeatherInfo {
             val weatherData = response.getJSONArray("weather").getJSONObject(0)

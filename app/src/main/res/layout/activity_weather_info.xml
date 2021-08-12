@@ -13,6 +13,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Back button"
         android:rotation="180"
         android:rotationX="180"
         android:scaleType="fitCenter"
@@ -38,6 +39,20 @@
             android:id="@+id/weatherList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+        </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/noItemsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noItems"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

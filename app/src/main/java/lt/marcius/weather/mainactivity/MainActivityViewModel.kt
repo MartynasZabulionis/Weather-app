@@ -1,4 +1,4 @@
-package lt.marcius.weather
+package lt.marcius.weather.mainactivity
 
 import android.app.Application
 import android.net.Uri
@@ -11,6 +11,8 @@ import com.android.volley.toolbox.Volley
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import lt.marcius.weather.MyApplication
+import lt.marcius.weather.WeatherInfo
 import org.json.JSONArray
 import org.json.JSONObject
 import java.net.URL

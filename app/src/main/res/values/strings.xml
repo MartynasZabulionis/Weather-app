@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Weather</string>
     <string name="enter_city_name"><font size="14">ENTER CITY NAME</font></string>
+    <string name="noItems">No weather history</string>
 </resources>

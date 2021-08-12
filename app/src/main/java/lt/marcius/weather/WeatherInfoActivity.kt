@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import lt.marcius.weather.databinding.ActivityWeatherInfoBinding
 import lt.marcius.weather.databinding.WeatherBlockBinding
@@ -21,6 +22,10 @@ class WeatherInfoActivity : AppCompatActivity() {
 
         binding.backButton.setOnClickListener { onBackPressed() }
 
+        val weatherInfos = intent.getParcelableArrayExtra("weatherInfos")!!.filterIsInstance<WeatherInfo>()
+        if (weatherInfos.isEmpty()) return
+        binding.noItemsText.visibility = View.GONE
+
         val cityNameColors = listOf(Color.YELLOW, Color.RED, Color.GREEN)
         val tempColors = listOf(Color.GREEN, Color.YELLOW, Color.RED)
         val dateColors = listOf(Color.RED, Color.GREEN, Color.YELLOW)
@@ -32,7 +37,7 @@ class WeatherInfoActivity : AppCompatActivity() {
                 else -> 1
             }
         }
-        val weatherInfos = intent.getParcelableArrayExtra("weatherInfos")!!.filterIsInstance<WeatherInfo>()
+
         for (weatherInfo in weatherInfos) {
             binding.weatherList.addView(
                 WeatherBlockBinding.inflate(layoutInflater, binding.weatherList,false).also {

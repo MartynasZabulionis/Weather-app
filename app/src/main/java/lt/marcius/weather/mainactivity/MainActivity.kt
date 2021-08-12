@@ -1,4 +1,4 @@
-package lt.marcius.weather
+package lt.marcius.weather.mainactivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
+import lt.marcius.weather.WeatherInfo
+import lt.marcius.weather.WeatherInfoActivity
 import lt.marcius.weather.databinding.ActivityMainBinding
 import java.util.*
 
