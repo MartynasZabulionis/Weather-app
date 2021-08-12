@@ -1,10 +1,8 @@
 package lt.marcius.weather
 
-import android.os.Parcel
 import android.os.Parcelable
 import androidx.room.*
 import kotlinx.parcelize.Parcelize
-import org.json.JSONArray
 import org.json.JSONObject
 import java.util.*
 import kotlin.math.roundToInt
@@ -29,7 +27,7 @@ data class WeatherInfo (
                 temp = response.getJSONObject("main").getDouble("temp").roundToInt(),
                 description = weatherData.getString("description").capitalize(Locale.ROOT),
                 unixTime = response.getInt("dt"),
-                iconData = iconData//byteBuffer.array()
+                iconData = iconData
             )
         }
     }

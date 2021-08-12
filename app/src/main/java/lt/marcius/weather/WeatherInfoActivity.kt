@@ -1,6 +1,5 @@
 package lt.marcius.weather
 
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
@@ -24,7 +23,7 @@ class WeatherInfoActivity : AppCompatActivity() {
 
         val weatherInfos = intent.getParcelableArrayExtra("weatherInfos")!!.filterIsInstance<WeatherInfo>()
         if (weatherInfos.isEmpty()) return
-        binding.noItemsText.visibility = View.GONE
+        binding.noHistoryText.visibility = View.GONE
 
         val cityNameColors = listOf(Color.YELLOW, Color.RED, Color.GREEN)
         val tempColors = listOf(Color.GREEN, Color.YELLOW, Color.RED)
@@ -61,9 +60,8 @@ class WeatherInfoActivity : AppCompatActivity() {
                         text = format.format(date).toUpperCase(Locale.ROOT)
                         setTextColor(dateColors[colorIndex])
                     }
-
-                    it.weatherIcon.setImageBitmap(BitmapFactory.decodeByteArray(weatherInfo.iconData, 0, weatherInfo.iconData.size))
-
+                    val bitmap = BitmapFactory.decodeByteArray(weatherInfo.iconData, 0, weatherInfo.iconData.size)
+                    it.weatherIcon.setImageBitmap(bitmap)
                 }.root
             )
         }
